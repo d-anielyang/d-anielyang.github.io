@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dodo</title>
+<title>Dodo Design &amp; Build</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -44,7 +44,7 @@
 
   /* ---------- Header ---------- */
   header {
-    padding: 28px 0;
+    padding: 24px 0;
     border-bottom: 1px solid var(--line);
   }
   header .wrap {
@@ -52,6 +52,7 @@
     justify-content: space-between;
     align-items: center;
   }
+  .brand-block { display: flex; align-items: baseline; gap: 10px; }
   .brand {
     font-family: 'Fraunces', serif;
     font-weight: 600;
@@ -62,6 +63,15 @@
     color: var(--rust);
     font-style: italic;
     font-weight: 500;
+  }
+  .brand-sub {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-soft);
+    border-left: 1px solid var(--line);
+    padding-left: 10px;
   }
   nav {
     display: flex;
@@ -138,7 +148,7 @@
     margin-top: 22px;
     font-size: 17px;
     color: var(--ink-soft);
-    max-width: 44ch;
+    max-width: 46ch;
   }
 
   .hero-actions {
@@ -155,6 +165,7 @@
     letter-spacing: 0.02em;
     transition: transform 0.15s ease, background 0.2s;
     display: inline-block;
+    border: 1px solid transparent;
   }
   .btn-primary {
     background: var(--forest);
@@ -167,7 +178,7 @@
   }
   .btn-ghost:hover { background: var(--ink); color: var(--paper); transform: translateY(-1px); }
 
-  /* ---------- Dodo illustration ---------- */
+  /* ---------- Dodo illustration / blueprint plate ---------- */
   .plate {
     background: var(--paper-deep);
     border: 1px solid var(--line);
@@ -247,7 +258,7 @@
   .field-notes dt:first-child { margin-top: 0; }
   .field-notes dd { margin: 3px 0 0; }
 
-  /* Work / cards */
+  /* Cards (services + projects) */
   .cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -277,6 +288,15 @@
     font-size: 14px;
     color: var(--ink-soft);
   }
+  .card .meta {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-top: 12px;
+    display: block;
+  }
 
   /* Contact */
   .contact {
@@ -291,7 +311,7 @@
     font-style: italic;
     font-weight: 500;
     font-size: 34px;
-    max-width: 12ch;
+    max-width: 14ch;
   }
   .contact-links {
     display: flex;
@@ -329,6 +349,7 @@
     .cards { grid-template-columns: 1fr; }
     nav { display: none; }
     .contact { flex-direction: column; align-items: flex-start; }
+    .brand-sub { display: none; }
   }
 </style>
 </head>
@@ -336,10 +357,14 @@
 
 <header>
   <div class="wrap">
-    <div class="brand">dodo<span>.</span></div>
+    <div class="brand-block">
+      <div class="brand">dodo<span>.</span></div>
+      <div class="brand-sub">Design &amp; Build</div>
+    </div>
     <nav>
       <a href="#about">About</a>
-      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#work">Projects</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -348,20 +373,20 @@
 <div class="wrap">
   <section class="specimen" style="border-top:none; padding-bottom:0;">
     <div>
-      <div class="label-tag"><span class="dot"></span> Specimen no. 001</div>
-      <h1>Hi, I'm<br><em>Dodo.</em></h1>
-      <div class="latin">Raphus cucullatus &middot; est. Mauritius</div>
-      <p class="lede">A personal corner of the internet - part portfolio, part field notebook. Extinct in the wild since 1681, alive and well right here.</p>
+      <div class="label-tag"><span class="dot"></span> Design + Build Studio</div>
+      <h1>We design.<br>We <em>build.</em></h1>
+      <div class="latin">Raphus cucullatus &middot; Vancouver, BC</div>
+      <p class="lede">Dodo is a design-and-build studio for homes and small spaces. One team, start to finish — from first sketch to final walkthrough — so nothing gets lost between the drawing and the drywall.</p>
       <div class="hero-actions">
-        <a href="#work" class="btn btn-primary">See the work</a>
-        <a href="#contact" class="btn btn-ghost">Get in touch</a>
+        <a href="#work" class="btn btn-primary">See our projects</a>
+        <a href="#contact" class="btn btn-ghost">Start a project</a>
       </div>
     </div>
 
     <div class="plate">
       <svg viewBox="0 0 400 340" role="img" aria-labelledby="dodoTitle dodoDesc">
-        <title id="dodoTitle">Line illustration of a dodo bird</title>
-        <desc id="dodoDesc">A simple ink-line drawing of a dodo, standing, in the style of a natural history plate.</desc>
+        <title id="dodoTitle">Line illustration of a dodo bird with a carpenter's rule</title>
+        <desc id="dodoDesc">A simple ink-line drawing of a dodo, standing, with a folding rule tucked under its wing, in the style of a natural history plate.</desc>
         <g class="wing" fill="none" stroke="#2B2A24" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
           <!-- body -->
           <path d="M120 230 C 95 205, 92 165, 118 138 C 138 116, 168 108, 198 112 C 214 78, 250 58, 278 66 C 300 72, 306 92, 292 106 C 314 112, 330 130, 326 150 C 322 172, 300 182, 280 178 C 292 200, 288 228, 262 244 C 234 262, 196 262, 168 250" />
@@ -386,10 +411,19 @@
           <!-- tail tuft -->
           <path d="M118 200 C 100 196, 86 202, 80 216" stroke-width="1.8" opacity="0.8" />
           <path d="M120 214 C 102 214, 90 222, 86 236" stroke-width="1.8" opacity="0.6" />
+          <!-- carpenter's folding rule tucked under wing -->
+          <g stroke-width="1.8">
+            <path d="M96 178 L 78 210" />
+            <path d="M78 210 L 60 196" />
+            <path d="M60 196 L 66 172" />
+            <path d="M66 172 L 96 178" />
+            <line x1="87" y1="180" x2="83" y2="192" stroke-width="1.2" opacity="0.6" />
+            <line x1="76" y1="188" x2="68" y2="184" stroke-width="1.2" opacity="0.6" />
+          </g>
         </g>
       </svg>
       <div class="plate-caption">
-        <span>Plate III — Raphidae</span>
+        <span>Plate III — Dodo Design &amp; Build</span>
         <span>Fig. 1</span>
       </div>
     </div>
@@ -404,17 +438,43 @@
     </div>
     <div class="about-grid">
       <div>
-        <p>I'm Dodo - this site is where I keep the things I've made, the things I'm learning, and the occasional idea worth writing down.</p>
-        <p>The dodo felt right as a mascot: a little clumsy, a little misunderstood, and much smarter than history gave it credit for. This page is my attempt to give it a second act.</p>
+        <p>We're Dodo — a design-and-build studio that plans, permits, and builds under one roof. No handoff between an architect and a separate contractor, no gaps where a project can fall through.</p>
+        <p>The dodo felt right as a namesake: written off as clumsy, actually resourceful. We like proving assumptions wrong, one renovation at a time — on budget, and built to outlast the trend it started in.</p>
       </div>
       <dl class="field-notes">
         <dt>Based</dt>
         <dd>Vancouver, BC</dd>
-        <dt>Currently</dt>
-        <dd>Building small things, learning in public</dd>
-        <dt>Interests</dt>
-        <dd>Design, code, natural history, terrible bird puns</dd>
+        <dt>We work on</dt>
+        <dd>Kitchens, additions, laneway houses, full home renovations</dd>
+        <dt>How we work</dt>
+        <dd>Design-build, one contract, one point of contact</dd>
       </dl>
+    </div>
+  </section>
+</div>
+
+<div class="wrap">
+  <section id="services">
+    <div class="section-head">
+      <h2>How a project runs</h2>
+      <span class="cat">Cat. 02 / Services</span>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="num">01 — Design</div>
+        <h3>Plan</h3>
+        <p>We measure your space, listen to how you actually live in it, and draw a plan that fits both. Drawings, materials, and a real budget before anything is booked.</p>
+      </div>
+      <div class="card">
+        <div class="num">02 — Permit</div>
+        <h3>Prepare</h3>
+        <p>We handle permitting and scheduling so the paperwork doesn't stall the project. You get a clear timeline before the first wall comes down.</p>
+      </div>
+      <div class="card">
+        <div class="num">03 — Build</div>
+        <h3>Build</h3>
+        <p>Our own crews build it — the same team that designed it. Weekly updates, no surprise change orders, one walkthrough at the end where everything is already finished.</p>
+      </div>
     </div>
   </section>
 </div>
@@ -422,24 +482,27 @@
 <div class="wrap">
   <section id="work">
     <div class="section-head">
-      <h2>Selected work</h2>
-      <span class="cat">Cat. 02 / Work</span>
+      <h2>Selected projects</h2>
+      <span class="cat">Cat. 03 / Projects</span>
     </div>
     <div class="cards">
       <div class="card">
         <div class="num">Fig. A</div>
-        <h3>Project one</h3>
-        <p>A short description of what this project is and why it exists. Swap this in for your own work.</p>
+        <h3>Kitsilano Addition</h3>
+        <p>A 400 sq ft rear addition and kitchen reconfiguration for a growing family, designed to read as original to the 1930s house.</p>
+        <span class="meta">Kitsilano, Vancouver</span>
       </div>
       <div class="card">
         <div class="num">Fig. B</div>
-        <h3>Project two</h3>
-        <p>A short description of what this project is and why it exists. Swap this in for your own work.</p>
+        <h3>Laneway House</h3>
+        <p>A one-bedroom laneway home on a compact lot, built for a client downsizing from the main house next door.</p>
+        <span class="meta">Mount Pleasant, Vancouver</span>
       </div>
       <div class="card">
         <div class="num">Fig. C</div>
-        <h3>Project three</h3>
-        <p>A short description of what this project is and why it exists. Swap this in for your own work.</p>
+        <h3>Character Home Restoration</h3>
+        <p>A full interior restoration that kept the original trim and floors while rebuilding the systems behind the walls.</p>
+        <span class="meta">Strathcona, Vancouver</span>
       </div>
     </div>
   </section>
@@ -448,11 +511,11 @@
 <div class="wrap">
   <section id="contact">
     <div class="contact">
-      <h2>Let's talk.</h2>
+      <h2>Let's build something.</h2>
       <div class="contact-links">
-        <a href="mailto:hello@dodo.com">hello@dodo.com</a>
-        <a href="https://github.com/d-anielyang">github.com/d-anielyang</a>
-        <a href="#">linkedin.com/in/d-anielyang</a>
+        <a href="mailto:hello@dodobuild.com">hello@dodobuild.com</a>
+        <a href="tel:+16045550142">(604) 555-0142</a>
+        <a href="https://instagram.com/dodo.designbuild">instagram.com/dodo.designbuild</a>
       </div>
     </div>
   </section>
@@ -460,8 +523,8 @@
 
 <footer>
   <div class="wrap" style="display:flex; justify-content:space-between; width:100%;">
-    <span>&copy; 2026 Dodo</span>
-    <span>Not extinct, just resting</span>
+    <span>&copy; 2026 Dodo Design &amp; Build</span>
+    <span>Not extinct, just building</span>
   </div>
 </footer>
 
