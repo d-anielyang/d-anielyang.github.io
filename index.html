@@ -52,13 +52,16 @@
     justify-content: space-between;
     align-items: center;
   }
-  .brand-block { display: flex; align-items: baseline; gap: 10px; transition: opacity 0.2s; }
-  .brand-block:hover, .brand-block:focus-visible { opacity: 0.7; }
+  .brand-block { display: flex; align-items: baseline; gap: 10px; }
   .brand {
     font-family: 'Fraunces', serif;
     font-weight: 600;
     font-size: 20px;
     letter-spacing: 0.01em;
+    transition: opacity 0.2s;
+  }
+  .brand:hover, .brand:focus-visible {
+    opacity: 0.7;
   }
   .brand span {
     color: var(--rust);
@@ -358,10 +361,10 @@
 
 <header>
   <div class="wrap">
-    <a href="index.html" class="brand-block" aria-label="Dodo Design &amp; Build — home" style="text-decoration:none;">
-      <div class="brand">dodo<span>.</span></div>
+    <div class="brand-block">
+      <a href="index.html" class="brand" aria-label="Dodo — home" style="text-decoration:none;">dodo<span>.</span></a>
       <div class="brand-sub">Design &amp; Build</div>
-    </a>
+    </div>
     <nav>
       <a href="#about">About</a>
       <a href="#services">Services</a>
@@ -372,7 +375,7 @@
 </header>
 
 <div class="wrap">
-  <section class="specimen" style="border-top:none; padding-bottom:0;">
+  <section class="specimen" style="border-top:none;">
     <div>
       <div class="label-tag"><span class="dot"></span> Design + Build Studio</div>
       <h1>We design.<br>We <em>build.</em></h1>
