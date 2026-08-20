@@ -1,47 +1,58 @@
-# Dodo 🦤
+# Dodo Design & Build
 
-My personal website — part portfolio, part field notebook.
+Marketing site for Dodo, a design-and-build studio for homes and small
+spaces in Vancouver, BC.
 
-**Live site:** [d-anielyang.github.io](https://d-anielyang.github.io/)
-
-## About
-
-This site is designed around a natural history "specimen card" aesthetic — an illustrated dodo, field-note styling, and museum-plate typography — built to hold my projects, notes, and links in one place.
-
-## Built with
-
-- Plain HTML & CSS (no framework, no build step)
-- [Fraunces](https://fonts.google.com/specimen/Fraunces) for display type, [Work Sans](https://fonts.google.com/specimen/Work+Sans) for body text, [Space Mono](https://fonts.google.com/specimen/Space+Mono) for labels
-- Hosted for free on [GitHub Pages](https://pages.github.com/)
-
-## Project structure
+## Structure
 
 ```
-.
-├── index.html   # the site itself
-└── README.md    # this file
+dodo-site/
+├── index.html        Home page
+├── css/
+│   └── style.css      All site styles (colors, type, layout, components)
+├── assets/            Images and other static files (empty for now)
+└── README.md
 ```
 
 ## Running locally
 
-No build tools needed — just open `index.html` in a browser, or serve it locally:
+This is a static site — no build step, no dependencies. Two options:
 
-```bash
-python3 -m http.server 8000
-```
-
-Then visit `http://localhost:8000`.
+- **Quickest:** open `index.html` directly in a browser.
+- **Recommended:** serve it locally so relative links and fonts behave
+  exactly as they will in production:
+  ```
+  python3 -m http.server 8000
+  ```
+  then visit `http://localhost:8000`.
 
 ## Editing
 
-1. Edit `index.html` directly (on GitHub.com or locally).
-2. Commit and push to `main`.
-3. GitHub Pages rebuilds automatically — changes go live within a minute or two.
+- **Copy and layout** live in `index.html`, in the order sections appear
+  on the page (header → hero → about → services → projects → contact →
+  footer).
+- **All styling** lives in `css/style.css`. Colors, fonts, and spacing are
+  defined once as CSS variables at the top of the file (`:root { ... }`)
+  — change a value there rather than hunting for it elsewhere.
+- **Fonts** (Fraunces, Work Sans, Space Mono) are loaded from Google
+  Fonts via `<link>` tags in `index.html`'s `<head>`.
 
-## Custom domain
+## Adding a new page
 
-This repo is set up to support a custom domain via a `CNAME` file in the root. To point a domain here, add the domain to `CNAME` and update your registrar's DNS to the [GitHub Pages IP addresses](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site).
+Create a new `.html` file at the root (or in a subfolder, e.g.
+`projects/kitsilano-addition.html`) and link the same stylesheet:
 
-## License
+```html
+<link rel="stylesheet" href="css/style.css">
+```
 
-Personal project — feel free to use the layout as a starting point for your own site.
+If the page lives in a subfolder, adjust the path accordingly
+(`../css/style.css`).
+
+## Notes
+
+- No JavaScript framework or build tool — plain HTML/CSS by design, to
+  keep this easy to hand off or extend later.
+- If the site grows past a handful of pages, consider a static site
+  generator (e.g. 11ty) to share the header/nav/footer across pages
+  instead of duplicating them.
