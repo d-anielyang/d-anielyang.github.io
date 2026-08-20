@@ -52,7 +52,8 @@
     justify-content: space-between;
     align-items: center;
   }
-  .brand-block { display: flex; align-items: baseline; gap: 10px; }
+  .brand-block { display: flex; align-items: baseline; gap: 10px; transition: opacity 0.2s; }
+  .brand-block:hover, .brand-block:focus-visible { opacity: 0.7; }
   .brand {
     font-family: 'Fraunces', serif;
     font-weight: 600;
@@ -357,10 +358,10 @@
 
 <header>
   <div class="wrap">
-    <div class="brand-block">
+    <a href="index.html" class="brand-block" aria-label="Dodo Design &amp; Build — home" style="text-decoration:none;">
       <div class="brand">dodo<span>.</span></div>
       <div class="brand-sub">Design &amp; Build</div>
-    </div>
+    </a>
     <nav>
       <a href="#about">About</a>
       <a href="#services">Services</a>
